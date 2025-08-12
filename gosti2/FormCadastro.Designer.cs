@@ -57,6 +57,7 @@
             this.btnCadastar.TabIndex = 3;
             this.btnCadastar.Text = "Cadastar";
             this.btnCadastar.UseVisualStyleBackColor = true;
+            this.btnCadastar.Click += new System.EventHandler(this.btnCadastar_Click);
             // 
             // Senha
             // 

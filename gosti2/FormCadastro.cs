@@ -10,7 +10,7 @@ namespace gosti
         {
             InitializeComponent();
             this.Text = "Cadastro";
-            Senha.PasswordChar = '*'; // Esconde a senha com *
+            txtSenha.PasswordChar = '*'; // Esconde a senha com *
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e) // Renomeado para btnCadastrar
@@ -56,6 +56,11 @@ namespace gosti
         }
 
         private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCadastar_Click(object sender, EventArgs e)
         {
 
         }
