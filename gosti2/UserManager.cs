@@ -1,52 +1,67 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace gosti2
 {
     public static class UserManager
     {
-        private static List<User> users = new List<User>();
+        public static User UsuarioLogado { get; private set; }
 
-        // Adiciona um novo usuário
-        public static void AddUser(User newUser)
+        public static bool CadastrarUsuario(User novoUsuario)
         {
-            if (users.Any(u => u.Email == newUser.Email))
+            try
             {
-                throw new InvalidOperationException("Este e-mail já está cadastrado!");
+                using (var context = new ApplicationDbContext())
+                {
+                    if (context.Users.Any(u => u.Email == novoUsuario.Email))
+                    {
+                        MessageBox.Show("Este e-mail já está cadastrado!", "Erro");
+                        return false;
+                    }
+
+                    // Criptografar senha (implementar depois)
+                    context.Users.Add(novoUsuario);
+                    context.SaveChanges();
+
+                    return true;
+                }
             }
-
-            users.Add(newUser);
-        }
-
-        // Valida o login do usuário
-        public static bool ValidateLogin(string email, string password)
-        {
-            return users.Exists(u => u.Email == email && u.Senha == password);
-        }
-
-        // Verifica se e-mail já existe
-        public static bool EmailExists(string email)
-        {
-            return users.Any(u => u.Email == email);
-        }
-
-        // Obtém todos os usuários (útil para debug)
-        public static List<User> GetAllUsers()
-        {
-            return new List<User>(users);
-        }
-
-        // Remove um usuário pelo e-mail
-        public static bool RemoveUser(string email)
-        {
-            var user = users.FirstOrDefault(u => u.Email == email);
-            if (user != null)
+            catch (Exception ex)
             {
-                users.Remove(user);
-                return true;
+                MessageBox.Show($"Erro no cadastro: {ex.Message}");
+                return false;
             }
-            return false;
+        }
+
+        public static bool Login(string email, string senha)
+        {
+            try
+            {
+                using (var context = new ApplicationDbContext())
+                {
+                    var usuario = context.Users
+                        .FirstOrDefault(u => u.Email == email && u.Senha == senha);
+
+                    if (usuario != null)
+                    {
+                        UsuarioLogado = usuario;
+                        return true;
+                    }
+
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro no login: {ex.Message}");
+                return false;
+            }
+        }
+
+        public static void Logout()
+        {
+            UsuarioLogado = null;
         }
     }
 }

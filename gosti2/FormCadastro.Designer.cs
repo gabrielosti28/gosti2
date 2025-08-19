@@ -1,4 +1,4 @@
-﻿namespace gosti
+﻿namespace gosti2
 {
     partial class FormCadastro
     {
@@ -29,113 +29,153 @@
         private void InitializeComponent()
         {
             this.btnSair2 = new System.Windows.Forms.Button();
-            this.btnCadastar = new System.Windows.Forms.Button();
-            this.Senha = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.txtSenha = new System.Windows.Forms.TextBox();
-            this.txtEmail = new System.Windows.Forms.Label();
-            this.Nome = new System.Windows.Forms.Label();
-            this.txtData = new System.Windows.Forms.TextBox();
+            this.btnCadastrar2 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
-            this.Data = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtSenha = new System.Windows.Forms.TextBox();
+            this.txtConfirmarSenha = new System.Windows.Forms.TextBox();
+            this.txtDataNascimento = new System.Windows.Forms.TextBox();
+            this.txtBio = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnSair2
             // 
-            this.btnSair2.Location = new System.Drawing.Point(705, 335);
+            this.btnSair2.Location = new System.Drawing.Point(726, 315);
             this.btnSair2.Name = "btnSair2";
-            this.btnSair2.Size = new System.Drawing.Size(202, 115);
-            this.btnSair2.TabIndex = 2;
+            this.btnSair2.Size = new System.Drawing.Size(158, 103);
+            this.btnSair2.TabIndex = 0;
             this.btnSair2.Text = "Sair";
             this.btnSair2.UseVisualStyleBackColor = true;
             // 
-            // btnCadastar
+            // btnCadastrar2
             // 
-            this.btnCadastar.Location = new System.Drawing.Point(705, 191);
-            this.btnCadastar.Name = "btnCadastar";
-            this.btnCadastar.Size = new System.Drawing.Size(202, 115);
-            this.btnCadastar.TabIndex = 3;
-            this.btnCadastar.Text = "Cadastar";
-            this.btnCadastar.UseVisualStyleBackColor = true;
-            this.btnCadastar.Click += new System.EventHandler(this.btnCadastar_Click);
+            this.btnCadastrar2.Location = new System.Drawing.Point(726, 181);
+            this.btnCadastrar2.Name = "btnCadastrar2";
+            this.btnCadastrar2.Size = new System.Drawing.Size(147, 83);
+            this.btnCadastrar2.TabIndex = 1;
+            this.btnCadastrar2.Text = "Cadastrar";
+            this.btnCadastrar2.UseVisualStyleBackColor = true;
+            this.btnCadastrar2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // Senha
+            // label1
             // 
-            this.Senha.AutoSize = true;
-            this.Senha.Location = new System.Drawing.Point(291, 88);
-            this.Senha.Name = "Senha";
-            this.Senha.Size = new System.Drawing.Size(41, 13);
-            this.Senha.TabIndex = 9;
-            this.Senha.Text = "Senha:";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(146, 101);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(36, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "nome:";
             // 
-            // textBox2
+            // label2
             // 
-            this.textBox2.Location = new System.Drawing.Point(53, 116);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 8;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(151, 186);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(34, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "email:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // txtSenha
+            // label3
             // 
-            this.txtSenha.Location = new System.Drawing.Point(251, 116);
-            this.txtSenha.Name = "txtSenha";
-            this.txtSenha.Size = new System.Drawing.Size(100, 20);
-            this.txtSenha.TabIndex = 7;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(147, 279);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(39, 13);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "senha:";
             // 
-            // txtEmail
+            // label4
             // 
-            this.txtEmail.AutoSize = true;
-            this.txtEmail.Location = new System.Drawing.Point(84, 88);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(35, 13);
-            this.txtEmail.TabIndex = 6;
-            this.txtEmail.Text = "Email:";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(351, 269);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(24, 13);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "bio:";
             // 
-            // Nome
+            // label5
             // 
-            this.Nome.AutoSize = true;
-            this.Nome.Location = new System.Drawing.Point(291, 191);
-            this.Nome.Name = "Nome";
-            this.Nome.Size = new System.Drawing.Size(38, 13);
-            this.Nome.TabIndex = 13;
-            this.Nome.Text = "Nome:";
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(334, 360);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(66, 13);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "Nascimento:";
             // 
-            // txtData
+            // label6
             // 
-            this.txtData.Location = new System.Drawing.Point(53, 219);
-            this.txtData.Name = "txtData";
-            this.txtData.Size = new System.Drawing.Size(100, 20);
-            this.txtData.TabIndex = 12;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(130, 360);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(88, 13);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "Confirmar Senha:";
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(251, 219);
+            this.txtNome.Location = new System.Drawing.Point(118, 127);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(100, 20);
-            this.txtNome.TabIndex = 11;
+            this.txtNome.TabIndex = 8;
             // 
-            // Data
+            // txtEmail
             // 
-            this.Data.AutoSize = true;
-            this.Data.Location = new System.Drawing.Point(84, 191);
-            this.Data.Name = "Data";
-            this.Data.Size = new System.Drawing.Size(30, 13);
-            this.Data.TabIndex = 10;
-            this.Data.Text = "Data";
-            this.Data.Click += new System.EventHandler(this.label4_Click);
+            this.txtEmail.Location = new System.Drawing.Point(118, 215);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(100, 20);
+            this.txtEmail.TabIndex = 9;
+            // 
+            // txtSenha
+            // 
+            this.txtSenha.Location = new System.Drawing.Point(118, 316);
+            this.txtSenha.Name = "txtSenha";
+            this.txtSenha.Size = new System.Drawing.Size(100, 20);
+            this.txtSenha.TabIndex = 10;
+            // 
+            // txtConfirmarSenha
+            // 
+            this.txtConfirmarSenha.Location = new System.Drawing.Point(118, 386);
+            this.txtConfirmarSenha.Name = "txtConfirmarSenha";
+            this.txtConfirmarSenha.Size = new System.Drawing.Size(100, 20);
+            this.txtConfirmarSenha.TabIndex = 11;
+            // 
+            // txtDataNascimento
+            // 
+            this.txtDataNascimento.Location = new System.Drawing.Point(318, 386);
+            this.txtDataNascimento.Name = "txtDataNascimento";
+            this.txtDataNascimento.Size = new System.Drawing.Size(100, 20);
+            this.txtDataNascimento.TabIndex = 12;
+            // 
+            // txtBio
+            // 
+            this.txtBio.Location = new System.Drawing.Point(318, 303);
+            this.txtBio.Name = "txtBio";
+            this.txtBio.Size = new System.Drawing.Size(100, 20);
+            this.txtBio.TabIndex = 13;
             // 
             // FormCadastro
             // 
             this.ClientSize = new System.Drawing.Size(1128, 497);
-            this.Controls.Add(this.Nome);
-            this.Controls.Add(this.txtData);
-            this.Controls.Add(this.txtNome);
-            this.Controls.Add(this.Data);
-            this.Controls.Add(this.Senha);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtBio);
+            this.Controls.Add(this.txtDataNascimento);
+            this.Controls.Add(this.txtConfirmarSenha);
             this.Controls.Add(this.txtSenha);
             this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.btnCadastar);
+            this.Controls.Add(this.txtNome);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnCadastrar2);
             this.Controls.Add(this.btnSair2);
             this.Name = "FormCadastro";
             this.ResumeLayout(false);
@@ -148,14 +188,18 @@
         private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.Button btnSair2;
-        private System.Windows.Forms.Button btnCadastar;
-        private System.Windows.Forms.Label Senha;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox txtSenha;
-        private System.Windows.Forms.Label txtEmail;
-        private System.Windows.Forms.Label Nome;
-        private System.Windows.Forms.TextBox txtData;
+        private System.Windows.Forms.Button btnCadastrar2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtNome;
-        private System.Windows.Forms.Label Data;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtSenha;
+        private System.Windows.Forms.TextBox txtConfirmarSenha;
+        private System.Windows.Forms.TextBox txtDataNascimento;
+        private System.Windows.Forms.TextBox txtBio;
     }
 }

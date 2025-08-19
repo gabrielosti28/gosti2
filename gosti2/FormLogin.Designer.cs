@@ -1,4 +1,4 @@
-﻿namespace gosti
+﻿namespace gosti2
 {
     partial class FormLogin
     {
@@ -44,7 +44,6 @@
             this.btnSair.TabIndex = 0;
             this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = true;
-            this.btnSair.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnEntrar
             // 
@@ -54,7 +53,7 @@
             this.btnEntrar.TabIndex = 1;
             this.btnEntrar.Text = "Entrar";
             this.btnEntrar.UseVisualStyleBackColor = true;
-            this.btnEntrar.Click += new System.EventHandler(this.button2_Click);
+            this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click_1);
             // 
             // label1
             // 

@@ -30,6 +30,7 @@
         {
             this.btnAvancar = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
+            this.btnInformações = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnAvancar
@@ -52,11 +53,22 @@
             this.btnSair.UseVisualStyleBackColor = true;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click_1);
             // 
+            // btnInformações
+            // 
+            this.btnInformações.Location = new System.Drawing.Point(476, 254);
+            this.btnInformações.Name = "btnInformações";
+            this.btnInformações.Size = new System.Drawing.Size(75, 23);
+            this.btnInformações.TabIndex = 2;
+            this.btnInformações.Text = "informações";
+            this.btnInformações.UseVisualStyleBackColor = true;
+            this.btnInformações.Click += new System.EventHandler(this.btnInformações_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnInformações);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.btnAvancar);
             this.Name = "FormMain";
@@ -69,5 +81,6 @@
 
         private System.Windows.Forms.Button btnAvancar;
         private System.Windows.Forms.Button btnSair;
+        private System.Windows.Forms.Button btnInformações;
     }
 }

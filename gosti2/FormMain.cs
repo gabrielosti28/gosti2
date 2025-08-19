@@ -8,7 +8,7 @@ namespace gosti
         public FormMain()
         {
             InitializeComponent();
-            this.Text = "Bem-vindo"; // Título da janela
+            this.Text = "Bem-vindo"; 
         }
 
        
@@ -16,9 +16,9 @@ namespace gosti
 
         private void btnAvancar_Click_1(object sender, System.EventArgs e)
         {
-            this.Hide(); // Esconde a tela atual
-            new FormMenu().ShowDialog(); // Abre o menu
-            this.Close(); // Fecha a tela inicial quando voltar
+            this.Hide(); 
+            new FormMenu().ShowDialog(); 
+            this.Close(); 
         }
 
         private void btnSair_Click_1(object sender, System.EventArgs e)
@@ -26,8 +26,15 @@ namespace gosti
             if (MessageBox.Show("Deseja realmente sair?", "Confirmação",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                Application.Exit(); // Fecha o programa
+                Application.Exit(); 
             }
+        }
+
+        private void btnInformações_Click(object sender, System.EventArgs e)
+        {
+            this.Hide();
+            new infoTela().ShowDialog();
+            this.Close();
         }
     }
 }

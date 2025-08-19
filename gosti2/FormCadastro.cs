@@ -1,66 +1,71 @@
 ﻿using System;
 using System.Windows.Forms;
-using gosti2;
 
-namespace gosti
+namespace gosti2
 {
     public partial class FormCadastro : Form
     {
         public FormCadastro()
         {
             InitializeComponent();
-            this.Text = "Cadastro";
-            txtSenha.PasswordChar = '*'; // Esconde a senha com *
+            txtSenha.PasswordChar = '*';
+            txtConfirmarSenha.PasswordChar = '*';
         }
 
-        private void btnCadastrar_Click(object sender, EventArgs e) // Renomeado para btnCadastrar
+        private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            // Verifica se todos os campos estão preenchidos
-            if (string.IsNullOrWhiteSpace(Nome.Text) ||
-                string.IsNullOrWhiteSpace(txtEmail.Text) ||
-                string.IsNullOrWhiteSpace(Senha.Text) ||
-                string.IsNullOrWhiteSpace(Data.Text))
-            {
-                MessageBox.Show("Preencha todos os campos!", "Aviso",
-                              MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+            if (!ValidarCampos()) return;
 
-            // Validação básica de email
-            if (!txtEmail.Text.Contains("@") || !txtEmail.Text.Contains("."))
+            var novoUsuario = new User
             {
-                MessageBox.Show("Por favor, insira um email válido!", "Aviso",
-                              MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            // Cria um novo usuário
-            User newUser = new User()
-            {
-                Nome = Nome.Text,
+                Nome = txtNome.Text,
                 Email = txtEmail.Text,
-                Senha = Senha.Text,
-                DataNascimento = Data.Text
+                Senha = txtSenha.Text, // Implementar hash depois
+                DataNascimento = txtDataNascimento.Text,
+                Bio = txtBio.Text
             };
 
-            // Adiciona ao gerenciador (CORREÇÃO AQUI)
-            UserManager.AddUser(newUser);
-            MessageBox.Show("Cadastro realizado!", "Sucesso",
-                          MessageBoxButtons.OK, MessageBoxIcon.Information);
-            this.Close(); // Fecha a tela
+            if (UserManager.CadastrarUsuario(novoUsuario))
+            {
+                MessageBox.Show("Cadastro realizado com sucesso!");
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
         }
 
-        private void btnSair_Click(object sender, EventArgs e) // Padronize o nome
+        private bool ValidarCampos()
         {
-            this.Close();
+            if (string.IsNullOrWhiteSpace(txtNome.Text) ||
+                string.IsNullOrWhiteSpace(txtEmail.Text) ||
+                string.IsNullOrWhiteSpace(txtSenha.Text) ||
+                string.IsNullOrWhiteSpace(txtConfirmarSenha.Text) ||
+                string.IsNullOrWhiteSpace(txtDataNascimento.Text))
+            {
+                MessageBox.Show("Preencha todos os campos obrigatórios!");
+                return false;
+            }
+
+            if (txtSenha.Text != txtConfirmarSenha.Text)
+            {
+                MessageBox.Show("As senhas não coincidem!");
+                return false;
+            }
+
+            if (!txtEmail.Text.Contains("@"))
+            {
+                MessageBox.Show("Digite um email válido!");
+                return false;
+            }
+
+            return true;
         }
 
-        private void label4_Click(object sender, EventArgs e)
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void btnCadastar_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
 
         }

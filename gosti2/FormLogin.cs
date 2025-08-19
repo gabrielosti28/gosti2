@@ -1,46 +1,51 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using gosti;
 
-using System.Windows.Forms;
-using gosti2;
-
-namespace gosti
+namespace gosti2
 {
     public partial class FormLogin : Form
     {
         public FormLogin()
         {
             InitializeComponent();
-            this.Text = "Login";
-            txtSenha.PasswordChar = '*'; // Esconde a senha
+            txtSenha.PasswordChar = '*';
         }
 
-       
-        private void button2_Click(object sender, EventArgs e)
+        private void btnEntrar_Click(object sender, EventArgs e)
         {
-            if (UserManager.ValidateLogin(txtEmail.Text, txtSenha.Text))
+            if (string.IsNullOrWhiteSpace(txtEmail.Text) ||
+                string.IsNullOrWhiteSpace(txtSenha.Text))
             {
-                MessageBox.Show("Login feito com sucesso!", "Bem-vindo",
-                              MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Preencha todos os campos!");
+                return;
+            }
+
+            if (UserManager.Login(txtEmail.Text, txtSenha.Text))
+            {
+                MessageBox.Show($"Bem-vindo, {UserManager.UsuarioLogado.Nome}!");
+                this.DialogResult = DialogResult.OK;
                 this.Close();
             }
             else
             {
-                MessageBox.Show("Email ou senha incorretos!", "Erro",
-                              MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Email ou senha incorretos!");
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnCadastro_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
+            using (var formCadastro = new FormCadastro())
+            {
+                formCadastro.ShowDialog();
+            }
+            this.Show();
+        }
+
+        private void btnEntrar_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
