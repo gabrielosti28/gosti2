@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using gosti;
 
 namespace gosti2
 {
@@ -11,49 +12,54 @@ namespace gosti2
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            // 1️⃣ INICIALIZAÇÃO DO BANCO
-            try
+            // 1️⃣ CONFIGURAÇÃO DO BANCO (se necessário)
+            if (!DatabaseTester.TestarConexao())
             {
-                using (var context = new ApplicationDbContext())
+                // Se não conseguiu conectar, abre tela de configuração
+                using (var formConfig = new FormConfiguracaoBanco())
                 {
-                    context.Database.CreateIfNotExists(); // Cria banco se não existir
+                    if (formConfig.ShowDialog() != DialogResult.OK)
+                    {
+                        // Usuário cancelou a configuração
+                        Application.Exit();
+                        return;
+                    }
                 }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Erro ao inicializar banco: {ex.Message}\n\n" +
-                              "Verifique se o SQL Server está instalado.",
-                              "Erro Crítico", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
 
-            // 2️⃣ FLUXO PRINCIPAL DA APLICAÇÃO
-            while (true) // Loop para sempre voltar ao login após logout
+            // 2️⃣ TELA DE BOAS-VINDAS (FormMain)
+            using (var formMain = new FormMain())
             {
-                // Tela de Login
-                using (var formLogin = new FormLogin())
+                if (formMain.ShowDialog() == DialogResult.OK)
                 {
-                    var resultadoLogin = formLogin.ShowDialog();
+                    // 3️⃣ LOOP PRINCIPAL DA APLICAÇÃO
+                    ExecutarAplicacao();
+                }
+            }
+        }
 
-                    if (resultadoLogin == DialogResult.OK && UserManager.UsuarioLogado != null)
+        private static void ExecutarAplicacao()
+        {
+            while (true)
+            {
+                // 4️⃣ MENU PRINCIPAL
+                using (var formMenu = new FormMenu())
+                {
+                    var resultadoMenu = formMenu.ShowDialog();
+
+                    if (resultadoMenu == DialogResult.OK)
                     {
-                        // 3️⃣ SE LOGIN BEM-SUCEDIDO: Abre tela principal
+                        // 5️⃣ TELA PRINCIPAL (após login bem-sucedido)
                         using (var formPrincipal = new FormPrincipal())
                         {
                             Application.Run(formPrincipal);
-
-                            // Quando formPrincipal fechar, volta para o login
-                            UserManager.Logout(); // Garante logout
+                            UserManager.Logout();
                         }
                     }
-                    else
+                    else if (resultadoMenu == DialogResult.Cancel)
                     {
-                        // 4️⃣ SE USUÁRIO CANCELOU: Pergunta se quer sair
-                        if (MessageBox.Show("Deseja realmente sair do aplicativo?", "Sair",
-                                          MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                        {
-                            break; // Sai do loop e fecha aplicativo
-                        }
+                        // Usuário quer sair
+                        break;
                     }
                 }
             }

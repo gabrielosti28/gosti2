@@ -39,9 +39,9 @@
             this.lblBio = new System.Windows.Forms.Label();
             this.listBoxAtividades = new System.Windows.Forms.ListBox();
             this.panelSuperior = new System.Windows.Forms.Panel();
+            this.lblUsuario = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lblUsuario = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPerfil)).BeginInit();
             this.panelSuperior.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -156,6 +156,17 @@
             this.panelSuperior.Size = new System.Drawing.Size(800, 100);
             this.panelSuperior.TabIndex = 10;
             // 
+            // lblUsuario
+            // 
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuario.Location = new System.Drawing.Point(329, 33);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(118, 24);
+            this.lblUsuario.TabIndex = 0;
+            this.lblUsuario.Text = "Bem-vindo!";
+            this.lblUsuario.Click += new System.EventHandler(this.lblUsuario_Click);
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightGray;
@@ -179,17 +190,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(600, 350);
             this.panel2.TabIndex = 12;
-            // 
-            // lblUsuario
-            // 
-            this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuario.Location = new System.Drawing.Point(329, 33);
-            this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(118, 24);
-            this.lblUsuario.TabIndex = 0;
-            this.lblUsuario.Text = "Bem-vindo!";
-            this.lblUsuario.Click += new System.EventHandler(this.lblUsuario_Click);
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // FormPrincipal
             // 

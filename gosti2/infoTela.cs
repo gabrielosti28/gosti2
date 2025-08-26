@@ -26,5 +26,10 @@ namespace gosti2
         {
 
         }
+
+        private void infoTela_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

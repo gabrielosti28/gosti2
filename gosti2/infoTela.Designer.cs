@@ -37,6 +37,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Name = "infoTela";
             this.Text = "infoTela";
+            this.Load += new System.EventHandler(this.infoTela_Load);
             this.ResumeLayout(false);
 
         }

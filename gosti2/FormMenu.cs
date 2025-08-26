@@ -8,36 +8,51 @@ namespace gosti
         public FormMenu()
         {
             InitializeComponent();
-            this.Text = "Menu Principal";
+            this.Text = "Menu Principal - BookConnect";
         }
-
-       
-
-        
-
-       
 
         private void button1_Click(object sender, System.EventArgs e)
         {
             this.Hide();
-            new FormLogin().ShowDialog();
-            this.Show(); // Volta ao menu após fechar o login
+            using (var formLogin = new FormLogin())
+            {
+                if (formLogin.ShowDialog() == DialogResult.OK)
+                {
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
+            }
+            this.Show();
         }
 
         private void button2_Click(object sender, System.EventArgs e)
         {
             this.Hide();
-            new FormCadastro().ShowDialog();
+            using (var formCadastro = new FormCadastro())
+            {
+                if (formCadastro.ShowDialog() == DialogResult.OK)
+                {
+                    // Cadastro bem-sucedido, pode fazer login agora
+                    MessageBox.Show("Cadastro realizado com sucesso! Faça login para continuar.",
+                                  "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
             this.Show();
         }
 
         private void button3_Click(object sender, System.EventArgs e)
         {
-            if (MessageBox.Show("Deseja sair do programa?", "Confirmação",
+            if (MessageBox.Show("Tem certeza que deseja sair do sistema?", "Confirmação de Saída",
                             MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                Application.Exit();
+                this.DialogResult = DialogResult.Cancel;
+                this.Close();
             }
+        }
+
+        private void panelBotoes_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
