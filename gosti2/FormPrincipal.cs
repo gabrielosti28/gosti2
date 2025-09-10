@@ -46,8 +46,16 @@ namespace gosti2
 
         private void btnLivros_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("📚 Funcionalidade de Livros em desenvolvimento!",
-                          "Em Breve", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.Hide();
+            using (var formLogin = new FormMeusLivros())
+            {
+                if (formLogin.ShowDialog() == DialogResult.OK)
+                {
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
+            }
+            this.Show();
         }
 
         private void btnMensagens_Click(object sender, EventArgs e)

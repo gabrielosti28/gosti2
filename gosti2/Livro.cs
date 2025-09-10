@@ -20,8 +20,10 @@ namespace gosti2
         public string Descricao { get; set; }
         public byte[] Capa { get; set; }
         public DateTime DataAdicao { get; set; } = DateTime.Now;
+        public bool Favorito { get; set; }
+        public bool Lido { get; set; }
 
-        // Chave estrangeira ATUALIZADA
+        // Chave estrangeira
         public int UsuarioId { get; set; }
         public virtual Usuario Usuario { get; set; }
     }

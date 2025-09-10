@@ -21,3 +21,28 @@ C:\Users\CJ3027333\Source\Repos\gosti2\gosti2\obj\Debug\gosti2.csproj.Up2Date
 C:\Users\CJ3027333\Source\Repos\gosti2\gosti2\obj\Debug\gosti2.exe
 C:\Users\CJ3027333\Source\Repos\gosti2\gosti2\obj\Debug\gosti2.pdb
 C:\Users\CJ3027333\Source\Repos\gosti2\gosti2\obj\Debug\gosti2.FormConfiguracaoBanco.resources
+C:\Users\cj3027333\Downloads\gosti primeiro\gosti2\bin\Debug\gosti2.exe.config
+C:\Users\cj3027333\Downloads\gosti primeiro\gosti2\bin\Debug\gosti2.exe
+C:\Users\cj3027333\Downloads\gosti primeiro\gosti2\bin\Debug\gosti2.pdb
+C:\Users\cj3027333\Downloads\gosti primeiro\gosti2\bin\Debug\EntityFramework.dll
+C:\Users\cj3027333\Downloads\gosti primeiro\gosti2\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\cj3027333\Downloads\gosti primeiro\gosti2\bin\Debug\System.Data.SqlClient.dll
+C:\Users\cj3027333\Downloads\gosti primeiro\gosti2\bin\Debug\EntityFramework.xml
+C:\Users\cj3027333\Downloads\gosti primeiro\gosti2\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\cj3027333\Downloads\gosti primeiro\gosti2\bin\Debug\System.Data.SqlClient.xml
+C:\Users\cj3027333\Downloads\gosti primeiro\gosti2\obj\Debug\gosti2.csproj.AssemblyReference.cache
+C:\Users\cj3027333\Downloads\gosti primeiro\gosti2\obj\Debug\gosti2.FormCadastro.resources
+C:\Users\cj3027333\Downloads\gosti primeiro\gosti2\obj\Debug\gosti2.FormConfiguracaoBanco.resources
+C:\Users\cj3027333\Downloads\gosti primeiro\gosti2\obj\Debug\gosti2.FormLogin.resources
+C:\Users\cj3027333\Downloads\gosti primeiro\gosti2\obj\Debug\gosti.FormMain.resources
+C:\Users\cj3027333\Downloads\gosti primeiro\gosti2\obj\Debug\gosti.FormMenu.resources
+C:\Users\cj3027333\Downloads\gosti primeiro\gosti2\obj\Debug\gosti2.FormPrincipal.resources
+C:\Users\cj3027333\Downloads\gosti primeiro\gosti2\obj\Debug\gosti2.infoTela.resources
+C:\Users\cj3027333\Downloads\gosti primeiro\gosti2\obj\Debug\gosti2.Properties.Resources.resources
+C:\Users\cj3027333\Downloads\gosti primeiro\gosti2\obj\Debug\gosti2.csproj.GenerateResource.cache
+C:\Users\cj3027333\Downloads\gosti primeiro\gosti2\obj\Debug\gosti2.csproj.CoreCompileInputs.cache
+C:\Users\cj3027333\Downloads\gosti primeiro\gosti2\obj\Debug\gosti2.csproj.Up2Date
+C:\Users\cj3027333\Downloads\gosti primeiro\gosti2\obj\Debug\gosti2.exe
+C:\Users\cj3027333\Downloads\gosti primeiro\gosti2\obj\Debug\gosti2.pdb
+C:\Users\cj3027333\Downloads\gosti primeiro\gosti2\obj\Debug\gosti2.FormAdicionarLivro.resources
+C:\Users\cj3027333\Downloads\gosti primeiro\gosti2\obj\Debug\gosti2.FormMeusLivros.resources

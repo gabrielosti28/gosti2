@@ -286,7 +286,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(150, 30);
             this.label3.TabIndex = 1;
-            this.label3.Text = "👥 Amigos"; 
+            this.label3.Text = "👥 Amigos";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
@@ -306,7 +306,7 @@
             this.pictureBoxPerfil.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBoxPerfil.Location = new System.Drawing.Point(23, 23);
             this.pictureBoxPerfil.Name = "pictureBoxPerfil";
-            this.pictureBoxPerfil.Size = new System.Drawing.Size(50, 50);  
+            this.pictureBoxPerfil.Size = new System.Drawing.Size(50, 50);
             this.pictureBoxPerfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxPerfil.TabIndex = 7;
             this.pictureBoxPerfil.TabStop = false;
@@ -320,7 +320,7 @@
             this.lblBio.Name = "lblBio";
             this.lblBio.Size = new System.Drawing.Size(477, 30);
             this.lblBio.TabIndex = 8;
-            this.lblBio.Text = "Bio do usuário será exibida aqui..."; 
+            this.lblBio.Text = "Bio do usuário será exibida aqui...";
             this.lblBio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblBemVindo
@@ -341,7 +341,7 @@
             this.panelAtividades.Controls.Add(this.label1);
             this.panelAtividades.Location = new System.Drawing.Point(23, 200);
             this.panelAtividades.Name = "panelAtividades";
-            this.panelAtividades.Padding = new System.Windows.Forms.Padding(10); 
+            this.panelAtividades.Padding = new System.Windows.Forms.Padding(10);
             this.panelAtividades.Size = new System.Drawing.Size(754, 280);
             this.panelAtividades.TabIndex = 10;
             // 
