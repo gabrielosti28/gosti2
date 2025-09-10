@@ -15,14 +15,14 @@ namespace gosti2
         public string Autor { get; set; }
 
         [Required, MaxLength(50)]
-        public string Categoria { get; set; } // Terror, Filosofia, Romance, etc.
+        public string Categoria { get; set; }
 
         public string Descricao { get; set; }
         public byte[] Capa { get; set; }
         public DateTime DataAdicao { get; set; } = DateTime.Now;
 
-        // Chave estrangeira
-        public int UserId { get; set; }
-        public virtual User Usuario { get; set; }
+        // Chave estrangeira ATUALIZADA
+        public int UsuarioId { get; set; }
+        public virtual Usuario Usuario { get; set; }
     }
 }

@@ -53,7 +53,7 @@ namespace gosti2
                         using (var formPrincipal = new FormPrincipal())
                         {
                             Application.Run(formPrincipal);
-                            UserManager.Logout();
+                            UsuarioManager.Logout();
                         }
                     }
                     else if (resultadoMenu == DialogResult.Cancel)

@@ -16,7 +16,7 @@ namespace gosti2
         {
             if (!ValidarCampos()) return;
 
-            var novoUsuario = new User
+            var novoUsuario = new Usuario
             {
                 Nome = txtNome.Text,
                 Email = txtEmail.Text,
@@ -25,7 +25,7 @@ namespace gosti2
                 Bio = txtBio.Text
             };
 
-            if (UserManager.CadastrarUsuario(novoUsuario))
+            if (UsuarioManager.CadastrarUsuario(novoUsuario))
             {
                 MessageBox.Show("✅ Cadastro realizado com sucesso!\n\nAgora você pode fazer login em sua conta.",
                               "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
